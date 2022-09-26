@@ -458,12 +458,27 @@
   dependencies:
     "tslib" "^2.4.0"
 
+"@tanstack/match-sorter-utils@^8.1.1":
+  "integrity" "sha512-IdmEekEYxQsoLOR0XQyw3jD1GujBpRRYaGJYQUw1eOT1eUugWxdc7jomh1VQ1EKHcdwDLpLaCz/8y4KraU4T9A=="
+  "resolved" "https://registry.npmjs.org/@tanstack/match-sorter-utils/-/match-sorter-utils-8.1.1.tgz"
+  "version" "8.1.1"
+  dependencies:
+    "remove-accents" "0.4.2"
+
 "@tanstack/query-core@4.6.1":
   "integrity" "sha512-r5PXj0EG3z/5Rhb4gttPo/EOqfGhx4wSWJncI8WA4rwe2E2stpeZKnEEsQU7rEqReVCOYseswTYn+lwRF2Ap3Q=="
   "resolved" "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.6.1.tgz"
   "version" "4.6.1"
 
-"@tanstack/react-query@^4.6.1":
+"@tanstack/react-query-devtools@^4.6.1":
+  "integrity" "sha512-QCERm/ZuRWxBaJGEOk92AQ37iBR1x2AysETO6czs83xA2V20xhvK421cqPHP7fWK8d+PUkQLnCYQNOuWTvdg5w=="
+  "resolved" "https://registry.npmjs.org/@tanstack/react-query-devtools/-/react-query-devtools-4.6.1.tgz"
+  "version" "4.6.1"
+  dependencies:
+    "@tanstack/match-sorter-utils" "^8.1.1"
+    "use-sync-external-store" "^1.2.0"
+
+"@tanstack/react-query@^4.6.1", "@tanstack/react-query@4.6.1":
   "integrity" "sha512-fDLIqLq4KLv0PmLHOGXp2ppJdydF/8YoYQrePTODK3RsiZDQVPLLAojz7M3v7GK5VionIb4KgiK3qBoAiN3Y4A=="
   "resolved" "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.6.1.tgz"
   "version" "4.6.1"
@@ -2033,6 +2048,11 @@
   "integrity" "sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg=="
   "resolved" "https://registry.npmjs.org/regexpp/-/regexpp-3.2.0.tgz"
   "version" "3.2.0"
+
+"remove-accents@0.4.2":
+  "integrity" "sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA=="
+  "resolved" "https://registry.npmjs.org/remove-accents/-/remove-accents-0.4.2.tgz"
+  "version" "0.4.2"
 
 "resolve-from@^4.0.0":
   "integrity" "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="

@@ -27,6 +27,10 @@ const styles = css`
     margin: 0 auto;
   }
 
+  .title-global {
+    background-color: #f5f5f5;
+  }
+
   .flex-s {
     display: flex;
     justify-content: start;

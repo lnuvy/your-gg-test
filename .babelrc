@@ -18,6 +18,7 @@
           "./src"
         ],
         "alias": {
+          "@pages": "./src/../pages",
           "@hooks": "./src/hooks",
           "@components": "./src/components",
           "@elements": "./src/elements",

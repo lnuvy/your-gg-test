@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Wrap } from './styles'
+import { Wrap, LeftContent } from './styles'
+import SkeletonBox from '@components/SkeletonBox'
+import RightChart from '@components/TopInfo/RightChart'
 
 const rounding = (num: number) => {
+  if (num === 0) return 0
   const fixed = num.toFixed(1)
-
-  console.log('fixed', fixed)
-  return fixed === '0.0' ? 0 : Number(fixed)
+  return Number(fixed)
 }
 
 const TopInfo = ({ data }: any) => {
-  console.log(data)
-
   const [role, setRole] = useState(0)
   const [laning, setLaning] = useState(0)
   const [kda, setKda] = useState(0)
@@ -23,9 +22,32 @@ const TopInfo = ({ data }: any) => {
     }
   }, [data])
 
-  // if(!data) return <SkeletonBox width={} height={} />
+  if (!data) return <SkeletonBox width={320} height={65} margin="50px 0" />
 
-  return <Wrap></Wrap>
+  return (
+    <Wrap>
+      <div className="flex-sb">
+        <LeftContent>
+          <div className="grid">
+            <div className="bold">{role}</div>
+            <div className="thin">인분</div>
+          </div>
+
+          <div className="grid">
+            <div className="bold">{laning}</div>
+            <div className="thin">라인전</div>
+          </div>
+
+          <div className="grid">
+            <div className="bold">{kda}</div>
+            <div className="thin">KDA</div>
+          </div>
+        </LeftContent>
+
+        <RightChart />
+      </div>
+    </Wrap>
+  )
 }
 
 export default TopInfo

@@ -1,5 +1,5 @@
 export type Summoner = {
-  summoner: string
+  summoner: string | undefined
   matchCategory: string
   champion?: string | null
   lane?: string | null

@@ -4,12 +4,18 @@ import styled from '@emotion/styled'
 import { useState } from 'react'
 import Dropdown from '@elements/Dropdown'
 import { queueArray } from '@constant/Queue'
-import SkeletonBox from '@components/SkeletonBox'
+import TopInfo from '@components/TopInfo'
+import { useSummoner } from '@hooks/useSummoner'
 
 const Home: NextPage = () => {
   const [summoner, setSummoner] = useState<string>('Hide on Bush')
-  // const [state, setState] = useState(initState)
+  const [matchCategory, setMatchCategory] = useState('SoloRank')
+  const [champion, setChampion] = useState(null)
+  const [lane, setLane] = useState(null)
 
+  const { data } = useSummoner({ summoner, matchCategory, champion, lane })
+
+  console.log(data)
   return (
     <div className="global">
       <Head>
@@ -21,10 +27,13 @@ const Home: NextPage = () => {
       <H1>{summoner}</H1>
 
       <div className="flex-s">
-        <Dropdown items={queueArray}>SoloRank</Dropdown>
+        <Dropdown items={queueArray} setState={setMatchCategory}>
+          {matchCategory}
+        </Dropdown>
       </div>
 
-      <SkeletonBox width={100} height={100} />
+      {/*<SkeletonBox width={100} height={100} />*/}
+      <TopInfo />
     </div>
   )
 }

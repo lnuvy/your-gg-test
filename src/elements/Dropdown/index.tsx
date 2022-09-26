@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { Wrap, DropdownBtn, Items } from './styles'
 import Image from 'next/image'
 
-const Dropdown = ({ items, children }: any) => {
+const Dropdown = ({ items, children, setState }: any) => {
   const [showItem, setShowItem] = useState<boolean>(false)
   const [current, setCurrent] = useState(children)
 
@@ -12,6 +12,7 @@ const Dropdown = ({ items, children }: any) => {
 
   const selectQueueType = useCallback((queueType: string) => {
     setCurrent(queueType)
+    setState(queueType)
     setShowItem(false)
   }, [])
 

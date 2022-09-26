@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 const Svg = styled.svg`
   width: 278px;
   height: 44px;
+  margin-bottom: 33px;
 `
 
 const TitleSvg = () => {

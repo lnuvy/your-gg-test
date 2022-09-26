@@ -22,7 +22,7 @@ const TopInfo = ({ data }: any) => {
     }
   }, [data])
 
-  if (!data) return <SkeletonBox width={320} height={65} margin="50px 0" />
+  if (!data) return <SkeletonBox width={320} height={80} margin="50px 0" />
 
   return (
     <Wrap>

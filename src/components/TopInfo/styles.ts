@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const Wrap = styled.div`
-  margin-top: 50px;
+  margin: 50px 0;
   width: 100%;
 `
 
@@ -32,6 +32,8 @@ export const LeftContent = styled.div`
 `
 
 export const RightWrap = styled.div`
-  width: 180px;
-  height: 78px;
+  & > canvas {
+    width: 180px;
+    height: 78px !important;
+  }
 `

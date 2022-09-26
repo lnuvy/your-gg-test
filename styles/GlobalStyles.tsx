@@ -7,6 +7,7 @@ const styles = css`
     margin: 0;
     font-family: Noto Sans;
     scroll-behavior: smooth;
+    background-color: #f5f5f5;
   }
 
   a {
@@ -28,7 +29,10 @@ const styles = css`
   }
 
   .title-global {
-    background-color: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+
+    background: url('https://your.gg/images/home_bg_pc2.png') center 164px / 1800px 840px no-repeat;
   }
 
   .flex-s {

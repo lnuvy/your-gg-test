@@ -5,6 +5,7 @@ declare module '@emotion/react' {
     font: {
       font1: string
       font16: string
+      font14: string
       font13: string
       font12: string
       font11: string

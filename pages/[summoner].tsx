@@ -17,8 +17,9 @@ const Summoner: NextPage = () => {
   const [champion, setChampion] = useState(null)
   const [lane, setLane] = useState(null)
 
-  const { data, isFetching } = useSummoner({ summoner, matchCategory, champion, lane })
+  const { data, isFetching, error, isError } = useSummoner({ summoner, matchCategory, champion, lane })
 
+  console.log(data, error, isError)
   useEffect(() => {
     if (data) {
       setName(data.name)
@@ -36,7 +37,7 @@ const Summoner: NextPage = () => {
       <H1>{name || summoner}</H1>
 
       <div className="flex-s">
-        <Dropdown items={queueArray} setState={setMatchCategory}>
+        <Dropdown long items={queueArray} setState={setMatchCategory}>
           {matchCategory}
         </Dropdown>
       </div>

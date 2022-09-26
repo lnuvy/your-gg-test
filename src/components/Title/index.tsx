@@ -1,11 +1,14 @@
 import React from 'react'
 import TitleSvg from '@components/Title/TitleSvg'
+import InputBox from '@components/Title/InputBox'
 
 const Title = () => {
   return (
-    <div>
+    <>
       <TitleSvg />
-    </div>
+      <br />
+      <InputBox />
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-export type tierHistory = {
+export type HistoryItem = {
   division: string
   leaguePoint: number
   loses: number
@@ -8,6 +8,4 @@ export type tierHistory = {
   wins: number
 }
 
-export type tierHistoryArr = {
-  tierHistoryArr: tierHistory[]
-}
+export type tierHistory = HistoryItem[]

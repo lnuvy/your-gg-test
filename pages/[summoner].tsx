@@ -25,8 +25,6 @@ const Summoner: NextPage = () => {
     }
   }, [data])
 
-  console.log(isFetching)
-
   return (
     <div className="global">
       <Head>

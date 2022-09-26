@@ -4,10 +4,10 @@ declare module '@emotion/react' {
   export interface Theme {
     font: {
       font1: string
-      font2: string
-      font3: string
-      font4: string
-      font5: string
+      font16: string
+      font13: string
+      font12: string
+      font11: string
     }
     palette: {
       background: string

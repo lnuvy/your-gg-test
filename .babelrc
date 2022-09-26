@@ -22,7 +22,8 @@
           "@components": "./src/components",
           "@elements": "./src/elements",
           "@typing": "./src/typing",
-          "@queries": "./src/queries"
+          "@queries": "./src/queries",
+          "@constant": "./src/constant"
         }
       }
     ],

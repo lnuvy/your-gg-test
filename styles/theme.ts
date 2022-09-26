@@ -1,17 +1,17 @@
 export const theme = {
   font: {
     font1: '48px',
-    font2: '16px',
-    font3: '13px',
-    font4: '12px',
-    font5: '11px',
+    font16: '16px',
+    font13: '13px',
+    font12: '12px',
+    font11: '11px',
   },
   palette: {
     background: '#F5F5F5',
     border: '#BBBBBB',
     color1: '#2D2B2E',
-    color2: '#F8F8F8',
+    color2: '#F8F8F8', // dropdown content 배경색
     color3: '#318EEF',
-    color4: '#EEEEEE',
+    color4: '#EEEEEE', // dropdown hover/selected 배경색
   },
 }

@@ -5,10 +5,7 @@ const styles = css`
   body {
     padding: 0;
     margin: 0;
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
-      Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
-      'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol', sans-serif;
+    font-family: Noto Sans;
     scroll-behavior: smooth;
   }
 
@@ -20,6 +17,14 @@ const styles = css`
   * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .global {
+    //min-width: 100vw;
+    width: 520px;
+    min-height: 100vh;
+    padding: 100px 104px 100px 100px;
+    margin: 0 auto;
   }
 
   .flex-s {
@@ -49,8 +54,8 @@ const styles = css`
   .flex-c-s {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
+    justify-content: start;
+    align-items: center;
   }
 
   .flex-c-c {

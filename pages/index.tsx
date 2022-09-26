@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { useState } from 'react'
 import Dropdown from '@elements/Dropdown'
 import { queueArray } from '@constant/Queue'
+import SkeletonBox from '@components/SkeletonBox'
 
 const Home: NextPage = () => {
   const [summoner, setSummoner] = useState<string>('Hide on Bush')
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
       <div className="flex-s">
         <Dropdown items={queueArray}>SoloRank</Dropdown>
       </div>
+
+      <SkeletonBox width={100} height={100} />
     </div>
   )
 }

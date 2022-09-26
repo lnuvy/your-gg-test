@@ -12,6 +12,6 @@ export const theme = {
     color1: '#2D2B2E',
     color2: '#F8F8F8', // dropdown content 배경색
     color3: '#318EEF',
-    color4: '#EEEEEE', // dropdown hover/selected 배경색
+    color4: '#EEEEEE', // dropdown hover/selected 배경색, Skeleton 배경색
   },
 }

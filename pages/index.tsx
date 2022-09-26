@@ -15,7 +15,6 @@ const Home: NextPage = () => {
 
   const { data } = useSummoner({ summoner, matchCategory, champion, lane })
 
-  console.log(data)
   return (
     <div className="global">
       <Head>
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
       </div>
 
       {/*<SkeletonBox width={100} height={100} />*/}
-      <TopInfo />
+      <TopInfo data={data} />
     </div>
   )
 }

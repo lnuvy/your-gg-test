@@ -8,9 +8,9 @@ const TopInfoSkeleton = () => {
     <Wrap>
       <div className="flex-sb">
         <LeftContent>
-          <SkeletonBox width={100} height={22} margin="4px 0" />
-          <SkeletonBox width={100} height={22} margin="4px 0" />
-          <SkeletonBox width={100} height={22} margin="4px 0" />
+          <SkeletonBox width={100} height={24} margin="4px 0" />
+          <SkeletonBox width={100} height={24} margin="4px 0" />
+          <SkeletonBox width={100} height={24} margin="4px 0" />
         </LeftContent>
 
         <SkeletonBox width={180} height={90} margin="0" />

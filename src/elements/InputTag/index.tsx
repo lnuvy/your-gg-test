@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import styled from '@emotion/styled'
 
-// TODOS: 타입 맞추기
-const InputTag = ({ value, onChange, submitEvent }: any) => {
+interface InputProps {
+  value: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  submitEvent: () => void
+}
+
+const InputTag = ({ value, onChange, submitEvent }: InputProps) => {
   return (
     <Input
       value={value}

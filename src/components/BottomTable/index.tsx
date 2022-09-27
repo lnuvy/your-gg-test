@@ -4,6 +4,7 @@ import { ApiResult, MostChampion, MostLane } from '@typing/Api'
 import Image from 'next/image'
 import LaneRow from '@components/BottomTable/LaneRow'
 import ChampionRow from '@components/BottomTable/ChampionRow'
+import Skeleton from '@components/BottomTable/Skeleton'
 
 interface BottomProps<T = any> {
   data: ApiResult
@@ -35,12 +36,18 @@ const BottomTable = ({ data, setLane, setChampion }: BottomProps) => {
           </tr>
         </thead>
         <tbody>
-          {mostLanes.map((v: MostLane, i) => {
-            return <LaneRow key={`${v.lane}_${i}`} v={v} onClick={() => setLane(v.lane)} />
-          })}
-          {mostChampions.map((v: MostChampion) => {
-            return <ChampionRow key={v.id} v={v} onClick={() => setChampion(v.key)} />
-          })}
+          {data ? (
+            <>
+              {mostLanes.map((v: MostLane, i) => {
+                return <LaneRow key={`${v.lane}_${i}`} v={v} onClick={() => setLane(v.lane)} />
+              })}
+              {mostChampions.map((v: MostChampion) => {
+                return <ChampionRow key={v.id} v={v} onClick={() => setChampion(v.key)} />
+              })}
+            </>
+          ) : (
+            <Skeleton />
+          )}
         </tbody>
       </table>
     </Wrap>

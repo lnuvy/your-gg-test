@@ -28,7 +28,7 @@ export default class ErrorBoundary extends React.Component<Props, State> {
   componentDidMount() {
     if (this.props.router?.pathname) {
       // console.log(this.props.router.pathname)
-      if (this.props.router.pathname !== '/') {
+      if (this.props.router.pathname === '/ErrorBoundary') {
         this.props.router.push('/').then()
       }
     }

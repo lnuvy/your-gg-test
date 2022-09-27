@@ -7,6 +7,7 @@ export const Wrap = styled.div`
   & > table {
     width: 100%;
     border-spacing: 0 10px;
+    table-layout: fixed;
 
     thead th {
       font-size: ${({ theme }) => theme.font.font10};

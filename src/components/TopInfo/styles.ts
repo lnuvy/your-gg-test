@@ -16,13 +16,13 @@ export const LeftContent = styled.div`
 
   & > .grid {
     width: 100%;
-    height: 22px;
+    height: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     margin: 3px 0;
+
     & > .bold {
-      line-height: 21.79px;
       font-weight: 700;
       font-size: ${({ theme }) => theme.font.font16};
     }

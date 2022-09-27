@@ -10,7 +10,6 @@ const rounding = (num: number) => {
   return Number(fixed)
 }
 
-// TODOS: 타입 맞추기
 const TopInfo = ({ data }: ApiResult) => {
   const [role, setRole] = useState(0)
   const [laning, setLaning] = useState(0)

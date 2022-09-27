@@ -1,6 +1,13 @@
-import React, { useCallback, useState } from 'react'
+import React, { Dispatch, SetStateAction, useCallback, useState } from 'react'
 import { Wrap, DropdownBtn, Items } from './styles'
 import Image from 'next/image'
+
+interface DropdownProps<T = any> {
+  long: boolean
+  items: string[]
+  children: React.ReactNode
+  setState: Dispatch<SetStateAction<T>>
+}
 
 /**
  * @param long: boolean (길고 얇은 드롭박스: true, 뭉뚱한 드롭박스: false)
@@ -10,26 +17,26 @@ import Image from 'next/image'
  * @constructor
  */
 
-// TODOS: 타입 고치기!
-const Dropdown = ({ long, items, children, setState }: any) => {
+const Dropdown = ({ long, items, children, setState }: DropdownProps) => {
   const [showItem, setShowItem] = useState<boolean>(false)
-  const [current, setCurrent] = useState(children)
 
   const toggleShow = useCallback(() => {
     setShowItem((prev) => !prev)
   }, [])
 
   const selectQueueType = useCallback((queueType: string) => {
-    setCurrent(queueType)
     setShowItem(false)
-    if (setState) setState(queueType)
+    if (setState) {
+      setState(queueType)
+      localStorage.setItem('match', queueType)
+    }
   }, [])
 
   return (
     <Wrap>
       <DropdownBtn onClick={toggleShow} long={long}>
         <div className="flex-sb">
-          <span className="queue">{current}</span>
+          <span className="queue">{children}</span>
           <Image className="icon" src="/svg/Polygon3.svg" width={10} height={6} alt="hi" />
         </div>
       </DropdownBtn>

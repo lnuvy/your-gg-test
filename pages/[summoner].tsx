@@ -51,6 +51,10 @@ const Summoner: NextPage = () => {
       })
   }, [lane, champion])
 
+  // if (!router.isFallback && !summoner) {
+  //   return <div />
+  // }
+
   return (
     <div className="global">
       <Head>

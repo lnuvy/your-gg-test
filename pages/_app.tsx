@@ -6,6 +6,7 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient } from '@tanstack/query-core'
 import ErrorBoundary from '@pages/ErrorBoundary'
+import { useRouter } from 'next/router'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,13 +19,15 @@ export const queryClient = new QueryClient({
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
   return (
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={true} />
         <GlobalStyles />
 
-        <ErrorBoundary>
+        <ErrorBoundary router={router}>
           <Component {...pageProps} />
         </ErrorBoundary>
       </QueryClientProvider>

@@ -2,10 +2,12 @@ import React, { ErrorInfo } from 'react'
 import Link from 'next/link'
 import { AxiosError } from 'axios'
 import styled from '@emotion/styled'
+import { NextRouter } from 'next/dist/shared/lib/router/router'
 
 interface Props {
   children: React.ReactNode
-  fallback: React.ReactNode
+  // fallback: React.ReactNode
+  router: NextRouter
 }
 
 interface State {
@@ -23,9 +25,16 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     return { hasError: true, message: '' }
   }
 
+  componentDidMount() {
+    if (this.props.router?.pathname) {
+      // console.log(this.props.router.pathname)
+      if (this.props.router.pathname !== '/') {
+        this.props.router.push('/').then()
+      }
+    }
+  }
+
   componentDidCatch(error: AxiosError, errorInfo: ErrorInfo) {
-    console.error('Uncaught error in Error Boundary:', error, errorInfo)
-    console.log(error.response!.data)
     let data: any
     data = Object.assign({}, error.response!.data)
 
@@ -53,9 +62,12 @@ export default class ErrorBoundary extends React.Component<Props, State> {
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin: 2rem auto 0;
+  width: 520px;
+  min-height: 100vh;
+  padding: 4rem;
+  margin: 0 auto;
 `
 
 const Button = styled.button`

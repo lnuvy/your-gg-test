@@ -37,9 +37,10 @@ export const Items = styled.div<DropdownItemProps>`
   width: 120px;
   height: calc(${({ height }) => `${height} * 32px + 16px`});
   background: ${({ theme }) => theme.palette.color2};
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 8px 0;
+  z-index: 2;
 
   & > div {
     width: 120px;

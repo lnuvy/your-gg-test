@@ -21,7 +21,6 @@ const styles = css`
   }
 
   .global {
-    //min-width: 100vw;
     width: 520px;
     min-height: 100vh;
     padding: 100px 104px 0 100px;

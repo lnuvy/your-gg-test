@@ -25,7 +25,7 @@ const Summoner: NextPage = () => {
   // 로컬스토리지에 matchCategory 값이 들어있으면 주입, 없으면 SoloRank 로 세팅
   useEffect(() => {
     const match = localStorage.getItem('match')
-    console.log(match)
+    // console.log(match)
     if (match !== null) {
       setMatchCategory(match)
     } else {

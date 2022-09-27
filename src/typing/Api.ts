@@ -68,3 +68,33 @@ export type ApiResult =
       winRate: number
     }
   | any
+
+export type MostLane = {
+  isAverage: boolean
+  kda: number
+  lane: string
+  laning: number
+  matchCount: number
+  performance: any
+  pickRate: number
+  radarGraph: any
+  role: number
+  winRate: number
+}
+
+export type MostChampion = {
+  id: number
+  imageUrl: string
+  isAverage: boolean
+  kda: number
+  key: string
+  lane: string
+  laning: number
+  matchCount: number
+  name: string
+  performance: any
+  pickRate: number
+  radarGraph: any
+  role: number
+  winRate: number
+}

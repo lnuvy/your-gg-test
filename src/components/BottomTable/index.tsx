@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react'
 import { Wrap } from './styles'
-import { ApiResult } from '@typing/Api'
+import { ApiResult, MostChampion, MostLane } from '@typing/Api'
+import Image from 'next/image'
+import LaneRow from '@components/BottomTable/LaneRow'
+import ChampionRow from '@components/BottomTable/ChampionRow'
 
-// TODOS: 타입맞추기
-const BottomTable = ({ data }: ApiResult) => {
+interface BottomProps<T = any> {
+  data: ApiResult
+  setLane: Dispatch<SetStateAction<T>>
+  setChampion: Dispatch<SetStateAction<T>>
+}
+
+const BottomTable = ({ data, setLane, setChampion }: BottomProps) => {
+  const [mostLanes, setMostLanes] = useState([])
+  const [mostChampions, setMostChampions] = useState([])
+
+  useEffect(() => {
+    if (data) {
+      setMostLanes(data.mostLanes.slice(0, 2))
+      setMostChampions(data.mostChampions.slice(0, 5))
+    }
+  }, [data])
+
   return (
     <Wrap>
       <table>
@@ -16,18 +34,17 @@ const BottomTable = ({ data }: ApiResult) => {
             <th>KDA</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {mostLanes.map((v: MostLane, i) => {
+            return <LaneRow key={`${v.lane}_${i}`} v={v} onClick={() => setLane(v.lane)} />
+          })}
+          {mostChampions.map((v: MostChampion) => {
+            return <ChampionRow key={v.id} v={v} onClick={() => setChampion(v.key)} />
+          })}
+        </tbody>
       </table>
     </Wrap>
   )
 }
 
 export default BottomTable
-
-const EachRow = () => {
-  return (
-    <tr>
-      <td></td>
-    </tr>
-  )
-}

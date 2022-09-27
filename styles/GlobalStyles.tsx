@@ -24,7 +24,7 @@ const styles = css`
     //min-width: 100vw;
     width: 520px;
     min-height: 100vh;
-    padding: 100px 104px 100px 100px;
+    padding: 100px 104px 0 100px;
     margin: 0 auto;
   }
 
@@ -62,8 +62,8 @@ const styles = css`
   .flex-c-s {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
   }
 
   .flex-c-c {

@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     loader: 'akamai',
     path: '',
+    // domains: ['ddragon.leagueoflegends.com'],
   },
 }
 

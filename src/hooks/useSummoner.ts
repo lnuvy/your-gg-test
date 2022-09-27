@@ -4,6 +4,7 @@ import { queryOptions } from '@queries/QueryOptions'
 import { Summoner } from '@typing/Summoner'
 
 export const useSummoner = ({ summoner, matchCategory, champion, lane }: Summoner) => {
+  console.log(summoner, matchCategory, champion, lane)
   return useQuery([summoner, { matchCategory, champion, lane }], fetcher, {
     ...queryOptions,
     onError: ({ response }) => {

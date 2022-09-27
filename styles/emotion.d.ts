@@ -9,6 +9,7 @@ declare module '@emotion/react' {
       font13: string
       font12: string
       font11: string
+      font10: string
     }
     palette: {
       background: string

@@ -11,7 +11,7 @@ const InputBox = () => {
   const router = useRouter()
 
   const [currentLanguage, setCurrentLanguage] = useState('KR')
-  const [search, onChangeSearch, setSearch] = useInput('')
+  const [search, onChangeSearch] = useInput('')
 
   const onClickFind = () => router.push(`/${search}`)
 

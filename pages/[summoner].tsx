@@ -7,6 +7,9 @@ import { queueArray } from '@constant/Queue'
 import TopInfo from '@components/TopInfo'
 import { useSummoner } from '@hooks/useSummoner'
 import { useRouter } from 'next/router'
+import Hr from '@elements/Hr'
+import BottomTable from '@components/BottomTable'
+import { ApiResult } from '@typing/Api'
 
 const Summoner: NextPage = () => {
   const router = useRouter()
@@ -17,12 +20,14 @@ const Summoner: NextPage = () => {
   const [champion, setChampion] = useState(null)
   const [lane, setLane] = useState(null)
 
-  const { data, isFetching, error, isError } = useSummoner({ summoner, matchCategory, champion, lane })
+  const { data } = useSummoner({ summoner, matchCategory, champion, lane })
 
-  console.log(data, error, isError)
+  console.log(data)
+
   useEffect(() => {
     if (data) {
       setName(data.name)
+      console.log(data)
     }
   }, [data])
 
@@ -44,6 +49,9 @@ const Summoner: NextPage = () => {
 
       {/*<SkeletonBox width={100} height={100} />*/}
       <TopInfo data={data} />
+      <Hr />
+
+      <BottomTable data={data} />
     </div>
   )
 }

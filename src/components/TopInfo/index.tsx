@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Wrap, LeftContent } from './styles'
 import SkeletonBox from '@components/SkeletonBox'
 import RightChart from '@components/TopInfo/RightChart'
+import { ApiResult } from '@typing/Api'
 
 const rounding = (num: number) => {
   if (num === 0) return 0
@@ -9,7 +10,8 @@ const rounding = (num: number) => {
   return Number(fixed)
 }
 
-const TopInfo = ({ data }: any) => {
+// TODOS: 타입 맞추기
+const TopInfo = ({ data }: ApiResult) => {
   const [role, setRole] = useState(0)
   const [laning, setLaning] = useState(0)
   const [kda, setKda] = useState(0)
@@ -44,7 +46,7 @@ const TopInfo = ({ data }: any) => {
           </div>
         </LeftContent>
 
-        <RightChart />
+        <RightChart data={data} />
       </div>
     </Wrap>
   )

@@ -6,6 +6,7 @@ export const theme = {
     font13: '13px',
     font12: '12px',
     font11: '11px',
+    font10: '10px',
   },
   palette: {
     background: '#F5F5F5',

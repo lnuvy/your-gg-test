@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { HistoryItem } from '@typing/Api'
+import { ApiResult, HistoryItem } from '@typing/Api'
 import { useRouter } from 'next/router'
-import { queryClient } from '@pages/_app'
 import { RightWrap } from './styles'
 
 import { Line } from 'react-chartjs-2'
@@ -21,26 +20,23 @@ const options = {
   },
 }
 
-const RightChart = () => {
+const RightChart = ({ data }: ApiResult) => {
   const router = useRouter()
   const { summoner } = router.query
 
-  const data = queryClient.getQueriesData([summoner, {}])[0][1]
+  // const data = queryClient.getQueriesData([summoner, {}])[0][1]
 
   const [history, setHistory] = useState<any>({})
   const [customOptions, setCustomOptions] = useState({})
 
   useEffect(() => {
-    let objCopy: any
-    objCopy = Object.assign({}, data)
-
-    if (objCopy.tierHistory.length > 0) {
+    if (data.tierHistory.length > 0) {
       const chartData = {
         // labels: objCopy.tierHistory.map((v: HistoryItem) => dayjs(v.updated).format('YY.MM.DD')),
-        labels: objCopy.tierHistory.map((v: HistoryItem) => v.tier),
+        labels: data.tierHistory.map((v: HistoryItem) => v.tier + ' ' + v.division),
         datasets: [
           {
-            data: objCopy.tierHistory.map((v: HistoryItem) => v.leaguePoint),
+            data: data.tierHistory.map((v: HistoryItem) => v.leaguePoint),
             borderColor: '#318EEF',
             backgroundColor: '#318EEF',
             pointRadius: 0,
@@ -61,9 +57,6 @@ const RightChart = () => {
   }, [data])
 
   useEffect(() => {
-    let copy: any
-    copy = Object.assign({}, data)
-
     if (history.hasOwnProperty('labels')) {
       const newOptions = {
         ...options,
@@ -85,7 +78,7 @@ const RightChart = () => {
               // https://www.chartjs.org/docs/latest/configuration/tooltip.html#tooltip-callbacks
               afterLabel: (context: any) => {
                 const i = context.dataIndex
-                return dayjs(copy.tierHistory[i].updated).format('YY.MM.DD')
+                return dayjs(data.tierHistory[i].updated).format('YY.MM.DD')
               },
               label: (context: any) => context.formattedValue + ' LP',
             },

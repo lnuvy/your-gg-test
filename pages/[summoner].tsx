@@ -20,7 +20,7 @@ const Summoner: NextPage = () => {
   const [lane, setLane] = useState(null)
   const [champion, setChampion] = useState(null)
 
-  const { data } = useSummoner({ summoner, matchCategory, champion, lane })
+  const { data } = useSummoner({ summoner, matchCategory, champion, lane, router })
 
   useEffect(() => {
     if (data) setName(data.name)

@@ -5,6 +5,7 @@ import GlobalStyles from '../styles/GlobalStyles'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient } from '@tanstack/query-core'
+import ErrorBoundary from '@pages/ErrorBoundary'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={true} />
         <GlobalStyles />
-        <Component {...pageProps} />
+
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </QueryClientProvider>
     </ThemeProvider>
   )

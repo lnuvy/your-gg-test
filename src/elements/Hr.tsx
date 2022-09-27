@@ -8,6 +8,7 @@ const Hr = () => {
 const HrTag = styled.hr`
   width: 320px;
   background: #666666;
+  margin-bottom: 16px;
 `
 
 export default Hr

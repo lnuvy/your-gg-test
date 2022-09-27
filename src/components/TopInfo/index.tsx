@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Wrap, LeftContent } from './styles'
-import SkeletonBox from '@components/SkeletonBox'
 import RightChart from '@components/TopInfo/RightChart'
 import { ApiResult } from '@typing/Api'
+import Skeleton from '@components/TopInfo/Skeleton'
 
 const rounding = (num: number) => {
   if (num === 0) return 0
@@ -24,7 +24,7 @@ const TopInfo = ({ data }: ApiResult) => {
     }
   }, [data])
 
-  if (!data) return <SkeletonBox width={320} height={80} margin="50px 0" />
+  if (!data) return <Skeleton />
 
   return (
     <Wrap>

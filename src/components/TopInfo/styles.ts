@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 export const Wrap = styled.div`
   margin: 50px 0;
   width: 100%;
+  height: 90px;
 `
 
 export const LeftContent = styled.div`
@@ -19,6 +20,7 @@ export const LeftContent = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    margin: 3px 0;
     & > .bold {
       line-height: 21.79px;
       font-weight: 700;
@@ -34,6 +36,6 @@ export const LeftContent = styled.div`
 export const RightWrap = styled.div`
   & > canvas {
     width: 180px;
-    height: 78px !important;
+    height: 90px !important;
   }
 `

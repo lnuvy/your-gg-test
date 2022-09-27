@@ -1,8 +1,9 @@
 import React from 'react'
 import { Wrap } from './styles'
+import { ApiResult } from '@typing/Api'
 
 // TODOS: 타입맞추기
-const BottomTable = ({ data }: any) => {
+const BottomTable = ({ data }: ApiResult) => {
   return (
     <Wrap>
       <table>

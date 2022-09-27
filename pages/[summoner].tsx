@@ -22,8 +22,6 @@ const Summoner: NextPage = () => {
 
   const { data } = useSummoner({ summoner, matchCategory, champion, lane })
 
-  console.log(data)
-
   useEffect(() => {
     if (data) {
       setName(data.name)

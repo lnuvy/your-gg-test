@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Wrap, LeftContent } from './styles'
 import RightChart from '@components/TopInfo/RightChart'
 import { ApiResult } from '@typing/Api'
-import Skeleton from '@components/TopInfo/Skeleton'
+import TopSkeleton from '@components/TopInfo/TopSkeleton'
 
 const rounding = (num: number) => {
   if (num === 0) return 0
@@ -21,9 +21,10 @@ const TopInfo = ({ data }: ApiResult) => {
       setLaning(rounding(data.laning))
       setKda(rounding(data.kda))
     }
+    return () => {}
   }, [data])
 
-  if (!data) return <Skeleton />
+  if (!data) return <TopSkeleton />
 
   return (
     <Wrap>

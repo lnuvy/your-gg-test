@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 const InputBox = () => {
   const router = useRouter()
 
-  const [currentLanguage, setCurrentLanguage] = useState('KR')
+  const [currentLanguage] = useState('KR')
   const [search, onChangeSearch] = useInput('')
 
   const onClickFind = () => router.push(`/${search}`)

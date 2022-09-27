@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { LeftContent } from '@components/TopInfo/styles'
 import SkeletonBox from '@components/SkeletonBox'
 
-const TopInfoSkeleton = () => {
+const TopSkeleton = () => {
   return (
     <Wrap>
       <div className="flex-sb">
@@ -24,4 +24,4 @@ const Wrap = styled.div`
   height: 90px;
   margin: 50px 0;
 `
-export default TopInfoSkeleton
+export default TopSkeleton

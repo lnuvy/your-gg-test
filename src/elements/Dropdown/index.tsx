@@ -3,10 +3,10 @@ import { Wrap, DropdownBtn, Items } from './styles'
 import Image from 'next/image'
 
 interface DropdownProps<T = any> {
-  long: boolean
+  long?: boolean
   items: string[]
   children: React.ReactNode
-  setState: Dispatch<SetStateAction<T>>
+  setState?: Dispatch<SetStateAction<T>>
 }
 
 /**

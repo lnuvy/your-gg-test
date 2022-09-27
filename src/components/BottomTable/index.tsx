@@ -1,10 +1,9 @@
-import React, { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Wrap } from './styles'
 import { ApiResult, MostChampion, MostLane } from '@typing/Api'
-import Image from 'next/image'
 import LaneRow from '@components/BottomTable/LaneRow'
 import ChampionRow from '@components/BottomTable/ChampionRow'
-import Skeleton from '@components/BottomTable/Skeleton'
+import BottomSkeleton from '@components/BottomTable/BottomSkeleton'
 
 interface BottomProps<T = any> {
   data: ApiResult
@@ -46,7 +45,7 @@ const BottomTable = ({ data, setLane, setChampion }: BottomProps) => {
               })}
             </>
           ) : (
-            <Skeleton />
+            <BottomSkeleton />
           )}
         </tbody>
       </table>

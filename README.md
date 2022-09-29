@@ -13,13 +13,3 @@
 | dayjs               | 날짜 라이브러리             |1.11.5|
 
 <br>
-
-## 📌: 배포 주소(미완료)
-> http://your.gg-lnuvy-test.s3-website.ap-northeast-2.amazonaws.com
-
-
-간단하게나마 AWS S3로 배포하려 했으나, 채택한 라이브러리 chart.js 와 next.js 내부 모듈간 호환성에 문제가 있다는 이슈를 발견했습니다.  
-*[깃허브 이슈글](https://github.com/chartjs/Chart.js/issues/10673)*
-<br><br>
-이슈를 해결할 수 있는 방법을 모색해보고 배포가 된다면 README 를 수정해 놓겠습니다.
-
